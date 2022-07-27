@@ -10,14 +10,14 @@ const productSchema = new Schema({
         type:Number,
         required:true
     },
-    sale_price:{
-        type:Number,
+    Writing_master:{
+        type:String,
         required:true
     },
-    // img:{
-    //     type:String,
-    //     required:true
-    // },
+    image:{
+        type:String,
+        required:true
+    },
     description:{
         type:String,
         required:true

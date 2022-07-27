@@ -5,6 +5,10 @@ const categorySchema = new Schema({
         type: String,
         required: true
     },
+    image:{
+        type: String,
+        required: true
+    },
     status:{
         type: Number,
         default:0

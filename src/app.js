@@ -16,7 +16,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 
 app.use("/api",productRoute,userRoute,categoryRoute);
-mongoose.connect('mongodb://localhost:27017/Asm_Angular')
+mongoose.connect('mongodb://localhost:27017/Asm_Nextjs')
 .then(() => console.log("Kết nối DB thành công"))
 .catch((error) => console.log(error));
 
