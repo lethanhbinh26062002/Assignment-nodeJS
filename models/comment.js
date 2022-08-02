@@ -14,5 +14,4 @@ const commentSchema = new Schema({
         ref: "Product"
     },
 },{timestamps: true});
-// productSchema.index({'$**': 'text'});
 export default mongoose.model("Comment", commentSchema);

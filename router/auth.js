@@ -6,11 +6,11 @@ const router = Router();
 
 router.post('/signup', signUp);
 router.post('/login',isAuth, signIn);
-router.get('/users/:userId',isAuth ,checkAdmin, userList);
-router.post('/users/create/:userId',isAuth ,checkAdmin, create)
-router.patch('/users/:userId/:id',isAuth ,checkAdmin,update);
-router.delete('/users/:userId/:id',isAuth ,checkAdmin, remove);
-router.get('/users/:userId/:id',isAuth, real);
+router.get('/users',userList);
+router.post('/users/create',create)
+router.patch('/users/:id',update);
+router.delete('/users/:id',remove);
+router.get('/users/:id',real);
 
 router.param("userId", userById)
 

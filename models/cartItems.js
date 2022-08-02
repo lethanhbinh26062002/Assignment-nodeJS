@@ -1,12 +1,12 @@
 import mongoose,{Schema,ObjectId} from "mongoose";
 
 const cartItemsSchema = new Schema({
-    cartId:{
+    cart:{
         type:ObjectId,
         ref: "Cart"
     },
-    productId:{
-        type:ObjectId,
+    product:{
+        type: ObjectId,
         ref: "Product"
     },
     quantity:{

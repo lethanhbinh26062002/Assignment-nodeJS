@@ -5,12 +5,12 @@ import {userById} from '../controllers/auth'
 
 const router = Router();
 
-router.post("/categorys/create/:userId",isAuth,checkAdmin, create);
-router.get("/categorys/:userId/:id",isAuth, checkAdmin, real);
+router.post("/categorys/create", create);
+router.get("/categorys/:id", real);
 router.get("/categorys/proCate/:id", realProductByCategory);
 router.get("/categorys", list);
-router.delete("/categorys/:userId/:id",isAuth ,checkAdmin,remove);
-router.patch("/categorys/:userId/:id",isAuth ,checkAdmin,update);
+router.delete("/categorys/:id",remove);
+router.patch("/categorys/edit/:id" ,update);
 
 router.param("userId", userById) 
 
