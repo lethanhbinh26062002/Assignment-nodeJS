@@ -63,7 +63,7 @@ export const userList = async (req, res,) => {
     }
 };
 export const signUp = async (req, res) => {
-    const {name,email,password} = req.body;
+    const {name,email,address,password} = req.body;
     try {
         const existUser = await User.findOne({email}).exec();
         if (existUser) {
@@ -71,7 +71,7 @@ export const signUp = async (req, res) => {
                 message:"Email đã tồn tại"
             })
         }
-        const user = await new User({name,email,password}).save();
+        const user = await new User({name,email,address,password}).save();
         res.json({
             message: "Đăng ký thành công",
             user :{

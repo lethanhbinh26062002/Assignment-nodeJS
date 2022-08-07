@@ -4,6 +4,7 @@ import morgan from "morgan";
 import productRoute from "../router/product";
 import userRoute from "../router/auth";
 import categoryRoute from "../router/category"
+import cartRoute from "../router/cart"
 const app = express();
 import mongoose from "mongoose";
 
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
-app.use("/api",productRoute,userRoute,categoryRoute);
+app.use("/api",productRoute,userRoute,categoryRoute,cartRoute);
 mongoose.connect('mongodb://localhost:27017/Asm_Nextjs')
 .then(() => console.log("Kết nối DB thành công"))
 .catch((error) => console.log(error));

@@ -5,7 +5,7 @@ import {userById} from '../controllers/auth'
 const router = Router();
 
 router.post('/signup', signUp);
-router.post('/login',isAuth, signIn);
+router.post('/signin', signIn);
 router.get('/users',userList);
 router.post('/users/create',create)
 router.patch('/users/:id',update);
