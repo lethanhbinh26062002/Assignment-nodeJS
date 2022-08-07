@@ -9,11 +9,10 @@ const router = Router();
 router.get('/products', list);
 router.get('/products/:id', real);
 router.get('/products/proByCate/:id',realProductByCategory);
-router.post('/products/create',create);
-router.delete('/products/:id',remove);
-router.patch('/products/edit/:id',update);
+router.post('/products/create',isAuth, create);
+router.delete('/products/:id',isAuth, remove);
+router.patch('/products/edit/:id',isAuth, update);
 router.get('/search', search);
-router.post('/products/:id', createCartItems)
 
 router.param("userId", userById) // Lấy userId từ URL rồi check user có tồn tại  => next()
 

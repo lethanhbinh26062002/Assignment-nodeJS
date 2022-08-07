@@ -1,8 +1,16 @@
 import User from "../models/user";
 import Product from "../models/product";
 import CartItems from "../models/cartItems";
-import Cart from "../models/cart";
 
+export const listCartItems = async (req, res) => {
+    try {
+        const idUser = await User.findOne({_id: req.params._id}).exec();
+        const listCartItems = await CartItems.find({idUser}).select("-user").exec();
+        res.json(listCartItems);
+    } catch (error) {
+        console.log(error);
+    }
+}
 export const createCartItems = async (req, res) => {
     try {
         const cartItems = await new CartItems(req.body).save();
