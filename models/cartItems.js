@@ -1,10 +1,6 @@
 import mongoose,{Schema,ObjectId} from "mongoose";
 
 const cartItemsSchema = new Schema({
-    cart:{
-        type:ObjectId,
-        ref: "Cart"
-    },
     product:{
         type: ObjectId,
         ref: "Product"
