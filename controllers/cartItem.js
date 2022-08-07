@@ -2,10 +2,10 @@ import User from "../models/user";
 import Product from "../models/product";
 import CartItems from "../models/cartItems";
 
-export const listCartItems = async (_id,req, res) => {
+export const listCartItems = async (req, res) => {
     try {
-        const idUser = await User.findOne({_id}).exec();
-        const listCartItems = await CartItems.find({idUser}).select("-user").exec();
+        // const idUser = await User.findOne({_id}).exec();
+        const listCartItems = await CartItems.find().exec();
         res.json(listCartItems);
     } catch (error) {
         console.log(error);

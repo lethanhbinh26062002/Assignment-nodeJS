@@ -4,9 +4,9 @@ import { checkAdmin, isAuth, requireSignin } from '../models/middlewares/checkAu
 import { createCartItems, listCartItems, read_cartItem, remove_cartItems, update_cartItems } from '../controllers/cartItem';
 const router = Router();
 
-router.get('/cart/:userId',isAuth, listCartItems);
+router.get('/cart', listCartItems);
 router.get('/cart/:userId/:id' , isAuth, read_cartItem)
-router.post('/cartItem', createCartItems)
+router.post('/cart', createCartItems)
 router.patch('/cart/:userId/:id',isAuth, update_cartItems);
 router.delete('/cart/:userId/:id',isAuth, remove_cartItems);
 
